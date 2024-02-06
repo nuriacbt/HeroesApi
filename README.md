@@ -5,7 +5,10 @@ Este consiste en la realización de una API REST CRUD que permite gestionar Hero
 
 ## Inicio de la aplicación:
 
-comandos
+Para poder iniciar la aplicación hay que seguir los siguientes pasos:
+
+1. mvn clean install: para instalar todas las dependencias y ejecutar los test.
+2. mvn spring-boot:run: para arrancar la aplicación 
 
 La aplicación en local se levanta por defecto en el pueto 8080 y con el context path /hero-api.
 
@@ -80,3 +83,10 @@ Además se han utilizado las siguientes librerías, todas ellas con la última v
 - mapstruct 1.5.5.Final
 - springdoc-openapi v1.7.0
 - springdoc-openapi-web v2.3.0
+
+## Sobre docker:
+Se ha creado el fichero Dockerfile-test con la idea de dockerizar la aplicación. La imagen, al parecer, la construye bien, 
+pero no he podido lograr arrancar el contenedor, por causa de varios errores. De todas formas, los comandos utilizados
+son los siguientes:
+1. "docker build -f Dockerfile-test -t heroes-api-test:v1.0 .": para crear la imagen
+2. "docker run -p 8080:8080  heroes-api-test:v1.0 .": para arrancar el contenedor
