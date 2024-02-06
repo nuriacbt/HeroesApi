@@ -85,8 +85,6 @@ Además se han utilizado las siguientes librerías, todas ellas con la última v
 - springdoc-openapi-web v2.3.0
 
 ## Sobre docker:
-Se ha creado el fichero Dockerfile-test con la idea de dockerizar la aplicación. La imagen, al parecer, la construye bien, 
-pero no he podido lograr arrancar el contenedor, por causa de varios errores. De todas formas, los comandos utilizados
-son los siguientes:
+Los comandos utilizados para generar la imagen docker de la aplicación y para ejecutarla son los siguientes:
 1. "docker build -f Dockerfile-test -t heroes-api-test:v1.0 .": para crear la imagen
 2. "docker run -p 8080:8080  heroes-api-test:v1.0 .": para arrancar el contenedor

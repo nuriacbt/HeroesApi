@@ -71,7 +71,7 @@ public class HeroesIntegrationTest {
             .getForObject(getUrl("/search", queryParam), AllHeroesResponse.class);
 
       assertEquals(response.getHeroes().size(), LIST_SIZE);
-      assertTrue(response.getHeroes().getFirst().getName().toLowerCase().contains(NAME_TO_SEARCH));
+      assertTrue(response.getHeroes().get(0).getName().toLowerCase().contains(NAME_TO_SEARCH));
   }
 
   @Test
@@ -85,7 +85,7 @@ public class HeroesIntegrationTest {
       assertEquals(response.getStatusCode(), HttpStatus.CREATED);
 
       AllHeroesResponse allResponse = callAllHeroes();
-      assertEquals(allResponse.getHeroes().getLast().getName(), "TEST HERO");
+      assertEquals(allResponse.getHeroes().get(allResponse.getHeroes().size()-1).getName(), "TEST HERO");
   }
 
   @Test
